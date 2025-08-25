@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowUpRight, Building, Home, TreePine, Building2, Copy } from "lucide-react";
 
 const propertyTypes = [
   {
     id: 1,
     icon: Building,
-    name: "Houses",
+    name: "Buy",
     count: "288 Property",
     img: "https://i.pinimg.com/736x/cf/b0/b7/cfb0b750bb44819aba2f11b28e5ff08e.jpg",
   },
   {
     id: 2,
     icon: Home,
-    name: "Offices",
+    name: "Rent",
     count: "300 Property",
     img: "https://i.pinimg.com/736x/2a/f6/a4/2af6a4fff643de299760095e2ed4f47f.jpg",
   },
   {
     id: 3,
     icon: TreePine,
-    name: "Villas",
+    name: "Plot",
     count: "250 Property",
     img: "https://i.pinimg.com/736x/f8/e8/0f/f8e80ffde554c1ff3aade2eadb7f88b0.jpg",
   },
@@ -40,6 +41,17 @@ const propertyTypes = [
 ];
 
 export default function FeaturedPropertyType() {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+
+   const navigate = useNavigate();
+  function handleClick() {
+    // navigate("/");
+      window.location.href = "/";
+  }
   return (
     <div className="w-full py-12 px-6 bg-white">
       {/* Section Heading */}
@@ -61,10 +73,10 @@ export default function FeaturedPropertyType() {
         {propertyTypes.map((property, index) => {
           const IconComponent = property.icon; // ✅ move inside map
           return (
-            <div
+            <div onClick={handleClick}
               key={property.id}
-              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
-            >
+              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer"
+              >
               {/* Image with overlay */}
               <div className="relative h-40">
                 <img

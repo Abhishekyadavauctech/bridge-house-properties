@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ChevronDown,
   Search,
@@ -13,6 +14,13 @@ import {
 } from "lucide-react";
 
 export default function RentalListingApp() {
+
+   const navigate = useNavigate();
+  function handleClick() {
+    // navigate("/");
+      window.location.href = "/";
+  }
+
   const [filters, setFilters] = useState({
     location: "Chicago",
     bedrooms: "Select",
@@ -193,7 +201,7 @@ export default function RentalListingApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center mb-4">
@@ -307,10 +315,10 @@ export default function RentalListingApp() {
                   {openDropdowns.categories && (
                     <div className="space-y-3 pl-4 border-l-2 border-blue-100">
                       {[
-                        { name: "Apartments", count: 45 },
-                        { name: "Condos", count: 12 },
-                        { name: "Houses", count: 18 },
-                        { name: "Offices", count: 32 },
+                        { name: "1 BHK", count: 45 },
+                        { name: "2 BHK", count: 12 },
+                        { name: "3 BHK", count: 18 },
+                        { name: "4 BHK", count: 32 },
                       ].map((category) => (
                         <label
                           key={category.name}
@@ -354,10 +362,10 @@ export default function RentalListingApp() {
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">
-                          $200
+                          ₹200
                         </span>
                         <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">
-                          $4,999
+                          ₹4,999
                         </span>
                       </div>
                       <div className="relative">
@@ -370,7 +378,7 @@ export default function RentalListingApp() {
                       </div>
                       <div className="text-center">
                         <span className="text-xs text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
-                          Range: $200 - $4,999
+                          Range: ₹200 - ₹4,999
                         </span>
                       </div>
                     </div>
@@ -408,9 +416,9 @@ export default function RentalListingApp() {
             {/* Enhanced Listing Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {listings.map((listing) => (
-                <div
+                <div onClick={handleClick}
                   key={listing.id}
-                  className="group bg-white rounded-2xl shadow-lg  overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white rounded-2xl shadow-lg  overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 cursor-pointer"
                     >
                   <div className="relative overflow-hidden">
                     <img

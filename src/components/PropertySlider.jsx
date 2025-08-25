@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 const PropertySlider = () => {
+   const navigate = useNavigate();
+  function handleClick() {
+    // navigate("/");
+      window.location.href = "/";
+  }
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const properties = [
@@ -57,13 +63,13 @@ const PropertySlider = () => {
           <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white">
             <div className="flex h-96">
               {/* Left Content Panel */}
-              <div className="w-1/2 bg-gradient-to-br from-red-600 via-red-400 to-blue-600 text-white p-14 flex flex-col justify-center relative overflow-hidden">
+              <div className="w-1/2 bg-gradient-to-br from-teal-600 via-teal-400 to-teal-200 text-white p-14 flex flex-col justify-center relative overflow-hidden">
                 {/* Background decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
                 
                 <div className="relative z-10">
-                  <h2 className="text-4xl font-bold mb-4 leading-tight">
+                  <h2 className="text-2xl font-bold mb-4 leading-tight">
                     {properties[currentSlide].name}
                   </h2>
                   
@@ -75,7 +81,7 @@ const PropertySlider = () => {
                     <p className="text-white/90 mb-2">
                       {properties[currentSlide].area}
                     </p>
-                    <p className="text-2xl font-bold">
+                    <p className="text-xl font-bold">
                       {properties[currentSlide].price}
                     </p>
                   </div>
@@ -91,7 +97,7 @@ const PropertySlider = () => {
                     ))}
                   </div>
                   
-                  <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
+                  <button onClick={handleClick} className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 cursor-pointer">
                     See Details
                   </button>
                 </div>
