@@ -90,10 +90,10 @@ const RealEstateBanner = () => {
         </p>
 
         {/* Tab Buttons */}
-        <div className="flex mb-8">
+        <div className="flex gap-2 mb-8">
           <button
             onClick={() => handleTabSwitch('buy')}
-            className={`flex items-center gap-2 px-8 py-3 font-medium text-sm rounded-l-lg transition-all duration-300 ${
+            className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${
               activeTab === 'buy'
                 ? 'bg-teal-500 text-white shadow-lg'
                 : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
@@ -104,7 +104,7 @@ const RealEstateBanner = () => {
           </button>
           <button
             onClick={() => handleTabSwitch('rent')}
-            className={`flex items-center gap-2 px-8 py-3 font-medium text-sm rounded-r-lg transition-all duration-300 ${
+            className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${
               activeTab === 'rent'
                 ? 'bg-teal-500 text-white shadow-lg'
                 : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
@@ -112,6 +112,28 @@ const RealEstateBanner = () => {
           >
             <Building size={18} />
             Rent Property
+          </button>
+          <button
+            onClick={() => handleTabSwitch('plot')}
+            className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${
+              activeTab === 'plot'
+                ? 'bg-teal-500 text-white shadow-lg'
+                : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+            }`}
+          >
+            <Building size={18} />
+            Plot
+          </button>
+          <button
+            onClick={() => handleTabSwitch('commercial')}
+            className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${
+              activeTab === 'commercial'
+                ? 'bg-teal-500 text-white shadow-lg'
+                : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+            }`}
+          >
+            <Building size={18} />
+            Commercial  
           </button>
         </div>
 
@@ -184,7 +206,7 @@ const RealEstateBanner = () => {
           {/* Search Button */}
           <button
             onClick={handleSearch}
-            className="bg-teal-500 text-white px-5 py-3 rounded-lg hover:bg-teal-600 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center"
+            className="bg-teal-500 text-white px-2 py-3 rounded-lg hover:bg-teal-600 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center"
           >
             <Search size={20} />
           </button>

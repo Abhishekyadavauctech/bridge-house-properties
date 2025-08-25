@@ -3,6 +3,9 @@ import RealEstateBanner from "../components/RealEstateBanner";
 import StoryCircle from "../components/StoryCircle";
 import FeaturedPropertyType from "../components/FeaturedPropertyType";
 import FeaturedPropertyTypes from "../components/FeaturedPropertyTypes";
+import ProjectSlider from "../components/ProjectSlider"; 
+import PropertySlider from "../components/PropertySlider";
+import RentalListingApp from "../components/RentalListingApp";
 
 
 const Home = () => {
@@ -16,7 +19,10 @@ const Home = () => {
      <RealEstateBanner />
      {/* <StoryCircle /> */}
       <FeaturedPropertyType />
-      <FeaturedPropertyTypes />
+      {/* <FeaturedPropertyTypes /> */}
+      {/* <ProjectSlider /> */}
+      <PropertySlider />
+      <RentalListingApp />
     </>
   );
 };
