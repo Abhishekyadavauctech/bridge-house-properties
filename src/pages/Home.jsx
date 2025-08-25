@@ -6,6 +6,8 @@ import FeaturedPropertyTypes from "../components/FeaturedPropertyTypes";
 import ProjectSlider from "../components/ProjectSlider"; 
 import PropertySlider from "../components/PropertySlider";
 import RentalListingApp from "../components/RentalListingApp";
+import PropertyDetailPage from "../components/PropertyDetailPage";
+import PropertyListings from "../components/PropertyListings";
 
 
 const Home = () => {
@@ -23,6 +25,8 @@ const Home = () => {
       {/* <ProjectSlider /> */}
       <PropertySlider />
       <RentalListingApp />
+      <PropertyDetailPage />
+      <PropertyListings />
     </>
   );
 };

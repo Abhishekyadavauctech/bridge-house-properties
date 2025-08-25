@@ -3,11 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 const PropertySlider = () => {
-   const navigate = useNavigate();
-  function handleClick() {
-    // navigate("/");
-      window.location.href = "/";
-  }
+
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const properties = [
@@ -97,7 +93,7 @@ const PropertySlider = () => {
                     ))}
                   </div>
                   
-                  <button onClick={handleClick} className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 cursor-pointer">
+                  <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 cursor-pointer">
                     See Details
                   </button>
                 </div>

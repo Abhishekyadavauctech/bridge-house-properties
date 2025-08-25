@@ -1,25 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Heart, MapPin, Bed, Bath, Square, Wind, Shirt, Tv, User } from 'lucide-react';
+import {
+  Heart,
+  MapPin,
+  Bed,
+  Bath,
+  Square,
+  Wind,
+  Shirt,
+  Tv,
+  User,
+} from "lucide-react";
 
 const PropertyCard = ({ property }) => {
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <span key={i} className={`text-sm ${i < Math.floor(rating) ? 'text-yellow-400' : 'text-gray-300'}`}>
+      <span
+        key={i}
+        className={`text-sm ${
+          i < Math.floor(rating) ? "text-yellow-400" : "text-gray-300"
+        }`}
+      >
         ★
       </span>
     ));
   };
 
   return (
-    <div className="bg-white flex rounded-lg items-center shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white flex-row md:flex  rounded-lg items-center shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative">
-        <img 
-          src={property.image} 
+        <img
+          src={property.image}
           alt={property.title}
           className="w-full h-60 object-cover"
         />
-        
+
         {/* Badges */}
         <div className="absolute top-3 left-3 flex gap-2">
           {property.isNew && (
@@ -50,9 +65,7 @@ const PropertyCard = ({ property }) => {
       <div className="flex-1 p-4 px-6">
         {/* Rating */}
         <div className="flex items-center gap-2 mb-2">
-          <div className="flex">
-            {renderStars(property.rating)}
-          </div>
+          <div className="flex">{renderStars(property.rating)}</div>
           <span className="text-gray-600 text-sm">
             {property.rating} ({property.reviewCount} Reviews)
           </span>
@@ -113,15 +126,16 @@ const PropertyCard = ({ property }) => {
 };
 
 const PropertyListings = () => {
-     const navigate = useNavigate();
+  const navigate = useNavigate();
   function handleClick() {
     // navigate("/");
-      window.location.href = "/";
+    window.location.href = "/";
   }
   const properties = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image:
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Gomti Apartment",
       price: 1680,
       location: "17, Grove Towers, New York, USA",
@@ -136,11 +150,12 @@ const PropertyListings = () => {
       listedDate: "16 Jan 2023",
       category: "Apartment",
       isNew: true,
-      isFeatured: true
+      isFeatured: true,
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image:
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Loyal Apartment",
       price: 1940,
       location: "25, Willow Crest Apartment, USA",
@@ -155,11 +170,12 @@ const PropertyListings = () => {
       listedDate: "02 May 2023",
       category: "Apartment",
       isNew: false,
-      isFeatured: false
+      isFeatured: false,
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1584738766473-61c083514bf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image:
+        "https://images.unsplash.com/photo-1584738766473-61c083514bf4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Ocean Villa House",
       price: 1370,
       location: "12, Seaside Drive, California, USA",
@@ -174,11 +190,12 @@ const PropertyListings = () => {
       listedDate: "15 Mar 2023",
       category: "Villa",
       isNew: false,
-      isFeatured: true
+      isFeatured: true,
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image:
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Serenity  Suite",
       price: 1680,
       location: "17, Grove Towers, New York, USA",
@@ -193,11 +210,12 @@ const PropertyListings = () => {
       listedDate: "16 Jan 2023",
       category: "Apartment",
       isNew: true,
-      isFeatured: true
+      isFeatured: true,
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image:
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       title: "Loyal Apartment",
       price: 1940,
       location: "25, Willow Crest Apartment, USA",
@@ -212,7 +230,7 @@ const PropertyListings = () => {
       listedDate: "02 May 2023",
       category: "Apartment",
       isNew: false,
-      isFeatured: false
+      isFeatured: false,
     },
   ];
 
@@ -220,23 +238,34 @@ const PropertyListings = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="sm:w-full lg:w-[80%]  xl:w-[80%] 2xl:w-[70%] mx-auto px-8">
         {/* Header */}
-        <div className=" flex justify-between items-center mb-8">
-          <div className="text-gray-600">
-            Showing result <span className="font-medium">05</span> of <span className="font-medium">125</span>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+          {/* Left side - Results Count */}
+          <div className="text-gray-600 text-sm sm:text-base">
+            Showing result <span className="font-medium">05</span> of{" "}
+            <span className="font-medium">125</span>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Right side - Filters */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            {/* Sort By */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600">Sort By</span>
-              <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+              <span className="text-sm text-gray-600 whitespace-nowrap">
+                Sort By
+              </span>
+              <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
                 <option>Default</option>
                 <option>Price: Low to High</option>
                 <option>Price: High to Low</option>
                 <option>Newest First</option>
               </select>
             </div>
+
+            {/* Price Range */}
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600">Price Range</span>
-              <select className="border border-gray-300 rounded px-3 py-1 text-sm">
+              <span className="text-sm text-gray-600 whitespace-nowrap">
+                Price Range
+              </span>
+              <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
                 <option>Low to High</option>
                 <option>High to Low</option>
                 <option>Under $1000</option>
@@ -247,8 +276,11 @@ const PropertyListings = () => {
         </div>
 
         {/* Property Grid */}
-        <div onClick={handleClick} className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 cursor-pointer">
-          {properties.map(property => (
+        <div
+          onClick={handleClick}
+          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 cursor-pointer"
+        >
+          {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>

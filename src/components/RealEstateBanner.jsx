@@ -67,7 +67,7 @@ const RealEstateBanner = () => {
   ];
 
   return (
-    <div className="relative items-center justify-center w-full  flex items-center px-8 overflow-hidden py-30   " style={{
+    <div className="relative items-center justify-center w-full  flex items-center px-8 overflow-hidden px-4 md:px-10 lg:px-20 py-16 md:py-24 lg:py-30 " style={{
     backgroundImage: `url(${bannerBg})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -76,8 +76,8 @@ const RealEstateBanner = () => {
   >
      
       {/* Main Content */}
-      <div className="sm:w-full lg:w-[80%]  xl:w-[80%] 2xl:w-[70%] z-10">
-        <h1 className="text-4xl font-extrabold text-slate-900 leading-tight mb-5">
+      <div className="w-full lg:w-[80%] xl:w-[75%] 2xl:w-[70%] z-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
           {activeTab === 'buy' ? (
             <>Find Your Best Dream House<br />for Rental, Buy & Sell...</>
           ) : (
@@ -90,7 +90,7 @@ const RealEstateBanner = () => {
         </p>
 
         {/* Tab Buttons */}
-        <div className="flex gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
           <button
             onClick={() => handleTabSwitch('buy')}
             className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${
@@ -138,7 +138,7 @@ const RealEstateBanner = () => {
         </div>
 
         {/* Search Form */}
-        <div className="bg-white rounded-xl p-8 shadow-xl grid grid-cols-6 gap-5 items-end">
+        <div className="bg-white rounded-xl p-8 shadow-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 items-end">
           {/* city */}
           <div className="flex flex-col">
             <label className="text-sm text-slate-600 mb-2 font-medium">City</label>
@@ -213,38 +213,6 @@ const RealEstateBanner = () => {
         </div>
       </div>
 
-     
-      {/* Responsive Design - Mobile/Tablet */}
-      <style jsx>{`
-        @media (max-width: 1200px) {
-          .grid-cols-6 {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .px-20 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          
-          .text-5xl {
-            font-size: 2rem;
-          }
-          
-          .grid-cols-6 {
-            grid-template-columns: 1fr;
-          }
-          
-          .p-8 {
-            padding: 1.5rem;
-          }
-          
-          .gap-5 {
-            gap: 1rem;
-          }
-        }
-      `}</style>
     </div>
   );
 };
