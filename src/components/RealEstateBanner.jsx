@@ -109,7 +109,7 @@ const RealEstateBanner = () => {
 
         {/* Tab Buttons */}
         <div className=" ">
-          <div className=" flex  gap-2 pb-2">
+          <div className=" flex flex-wrap  gap-2 pb-2">
             <button
               onClick={() => handleTabSwitch("buy")}
               className={`flex items-center gap-2 px-4 py-3 font-medium text-sm rounded-lg transition-all duration-300 ${

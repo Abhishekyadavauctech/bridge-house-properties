@@ -49,8 +49,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className=" flex items-center justify-start" >
-      <div className="bg-white rounded-full shadow-xl flex items-center max-w-2xl w-full  transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+    <div className=" flex  items-center justify-start" >
+      <div className="bg-white rounded-full shadow-xl flex items-center md:max-w-2xl w-full  transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
         
         {/* Location Selector */}
         <div 
