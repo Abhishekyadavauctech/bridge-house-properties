@@ -11,6 +11,7 @@ import {
   Tv,
   User,
 } from "lucide-react";
+import PropertySidebar from "./PropertySidebar";
 
 const PropertyCard = ({ property }) => {
   const renderStars = (rating) => {
@@ -32,7 +33,7 @@ const PropertyCard = ({ property }) => {
         <img
           src={property.image}
           alt={property.title}
-          className="w-full h-60 object-cover"
+          className="w-full h-50 object-cover"
         />
 
         {/* Badges */}
@@ -105,14 +106,7 @@ const PropertyCard = ({ property }) => {
             <Wind className="w-4 h-4" />
             <span>{property.ac} AC</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Shirt className="w-4 h-4" />
-            <span>{property.wardrobe} Wardrobe</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Tv className="w-4 h-4" />
-            <span>{property.tv} TV</span>
-          </div>
+         
         </div>
 
         {/* Footer */}
@@ -240,54 +234,61 @@ const PropertyListings = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="sm:w-full lg:w-[80%]  xl:w-[80%] 2xl:w-[70%] mx-auto px-8">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
-          {/* Left side - Results Count */}
-          <div className="text-gray-600 text-sm sm:text-base">
-            Showing result <span className="font-medium">05</span> of{" "}
-            <span className="font-medium">125</span>
-          </div>
-
-          {/* Right side - Filters */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-            {/* Sort By */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600 whitespace-nowrap">
-                Sort By
-              </span>
-              <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
-                <option>Default</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Newest First</option>
-              </select>
+      <div className="2xl:w-[70%] lg:w-[80%] w-full mx-auto px-8 flex gap-8 justify-between">
+        <div className="w-full md:w-[80%]">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+            {/* Left side - Results Count */}
+            <div className="text-gray-600 text-sm sm:text-base">
+              Showing result <span className="font-medium">05</span> of{" "}
+              <span className="font-medium">125</span>
             </div>
 
-            {/* Price Range */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-600 whitespace-nowrap">
-                Price Range
-              </span>
-              <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
-                <option>Low to High</option>
-                <option>High to Low</option>
-                <option>Under $1000</option>
-                <option>$1000 - $2000</option>
-              </select>
+            {/* Right side - Filters */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+              {/* Sort By */}
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600 whitespace-nowrap">
+                  Sort By
+                </span>
+                <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
+                  <option>Default</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Newest First</option>
+                </select>
+              </div>
+
+              {/* Price Range */}
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600 whitespace-nowrap">
+                  Price Range
+                </span>
+                <select className="border border-gray-300 rounded px-3 py-1 text-sm w-full sm:w-auto">
+                  <option>Low to High</option>
+                  <option>High to Low</option>
+                  <option>Under $1000</option>
+                  <option>$1000 - $2000</option>
+                </select>
+              </div>
             </div>
           </div>
+
+          {/* Property Grid */}
+          <div
+            onClick={handleClick}
+            className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 cursor-pointer"
+          >
+            {properties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
+        </div>
+        <div className=" hidden md:block w-[20%] relative">
+            <PropertySidebar />
         </div>
 
-        {/* Property Grid */}
-        <div
-          onClick={handleClick}
-          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 cursor-pointer"
-        >
-          {properties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
-        </div>
+
       </div>
     </div>
   );

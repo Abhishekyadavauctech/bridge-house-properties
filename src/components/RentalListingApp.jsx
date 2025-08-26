@@ -315,10 +315,10 @@ export default function RentalListingApp() {
                   {openDropdowns.categories && (
                     <div className="space-y-3 pl-4 border-l-2 border-blue-100">
                       {[
-                        { name: "1 BHK", count: 45 },
-                        { name: "2 BHK", count: 12 },
-                        { name: "3 BHK", count: 18 },
-                        { name: "4 BHK", count: 32 },
+                        { name: "Apartment", count: 45 },
+                        { name: "Villa", count: 12 },
+                        { name: "House", count: 18 },
+                        { name: "Plot", count: 32 },
                       ].map((category) => (
                         <label
                           key={category.name}
@@ -336,6 +336,52 @@ export default function RentalListingApp() {
                           </div>
                           <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
                             {category.count}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Enhanced Categories */}
+                <div className="space-y-3">
+                  <button
+                    className="flex items-center justify-between w-full text-left group"
+                    onClick={() => toggleDropdown("bhk")}
+                  >
+                    <span className="text-sm font-semibold text-gray-700 group-hover:text-blue-600 transition-colors">
+                      BHK Types
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 text-gray-400 transition-transform group-hover:text-blue-600 ${
+                        openDropdowns.bhk ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {openDropdowns.bhk && (
+                    <div className="space-y-3 pl-4 border-l-2 border-blue-100">
+                      {[
+                        { name: "1 BHK", count: 45 },
+                        { name: "2 BHK", count: 12 },
+                        { name: "3 BHK", count: 18 },
+                        { name: "4 BHK", count: 32 },
+                      ].map((bhk) => (
+                        <label
+                          key={bhk.name}
+                          className="flex items-center justify-between group cursor-pointer"
+                        >
+                          <div className="flex items-center">
+                            <input
+                              type="checkbox"
+                              className="mr-3 w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+                              defaultChecked
+                            />
+                            <span className="text-sm  text-gray-700 group-hover:text-blue-600 transition-colors">
+                              {bhk.name}
+                            </span>
+                          </div>
+                          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                            {bhk.count}
                           </span>
                         </label>
                       ))}

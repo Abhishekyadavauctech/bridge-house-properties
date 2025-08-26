@@ -64,7 +64,7 @@ const PropertySlider = () => {
         </div>
         <div className="text-center mb-6 md:mb-10">
           <h2 className=" text-xl lg:text-3xl font-bold text-gray-800">
-            Top Properties and Upcoming Projects - Bridge House
+            Top Properties and  Projects - Bridge House
           </h2>
           <p className="text-gray-500 mt-2">
             Explore Our Curated Selection of Premium Properties for Unmatched Luxury

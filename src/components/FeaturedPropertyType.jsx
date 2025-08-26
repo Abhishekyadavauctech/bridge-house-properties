@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import RealEstatePopups from "./RealEstatePopups";
 import {
   ArrowUpRight,
   Building,
@@ -112,6 +113,8 @@ export default function FeaturedPropertyType() {
           );
         })}
       </div>
+      <RealEstatePopups />
     </div>
+    
   );
 }

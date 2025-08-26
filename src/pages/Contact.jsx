@@ -44,20 +44,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "support@doctoradda.com",
+      content: "support@bridgehouse.com",
       description: "Send us an email anytime!",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      content: "+919838075493",
+      content: "+918707767805",
       description: "Mon-Fri from 8am to 5pm",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
       content: "Vibhuti Khand, Gomti Nagar, Lucknow",
-      description: "Sai Heights, C-3/76, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010",
+      description: "1090, Gomti Nagar, Lucknow, Uttar Pradesh ",
     },
   ];
 
