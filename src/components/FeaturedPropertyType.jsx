@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowUpRight, Building, Home, TreePine, Building2, Copy } from "lucide-react";
+import {
+  ArrowUpRight,
+  Building,
+  Home,
+  TreePine,
+  Building2,
+  Copy,
+} from "lucide-react";
 
 const propertyTypes = [
   {
@@ -41,42 +48,41 @@ const propertyTypes = [
 ];
 
 export default function FeaturedPropertyType() {
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   function handleClick() {
-    // navigate("/");
-      window.location.href = "/";
+    navigate("/property-list");
+    // window.location.href = "/";
   }
   return (
-    <div className="w-full py-12 px-6 bg-white">
+    <div className="w-full py-8 md:py-12 px-6 bg-white">
       {/* Section Heading */}
       <div className="flex justify-center mb-3">
-          <span className="h-1 w-12 bg-gradient-to-r from-purple-500 to-green-400 rounded-full"></span>
+        <span className="h-1 w-12 bg-gradient-to-r from-purple-500 to-green-400 rounded-full"></span>
       </div>
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-900">
+      <div className="text-center mb-6 md:mb-10">
+        <h2 className="text-xl lg:text-3xl font-bold text-gray-800">
           Featured Property Type
         </h2>
         <p className="text-gray-500 mt-2">
-          Explore Our Curated Selection of Premium Properties for Unmatched Luxury
+          Explore Our Curated Selection of Premium Properties for Unmatched
+          Luxury
         </p>
-        
       </div>
 
       {/* Property Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
         {propertyTypes.map((property, index) => {
           const IconComponent = property.icon; // ✅ move inside map
           return (
-            <div onClick={handleClick}
+            <div
+              onClick={handleClick}
               key={property.id}
               className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden cursor-pointer"
-              >
+            >
               {/* Image with overlay */}
               <div className="relative h-40">
                 <img

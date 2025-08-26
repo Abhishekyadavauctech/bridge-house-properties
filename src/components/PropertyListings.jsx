@@ -88,7 +88,7 @@ const PropertyCard = ({ property }) => {
         </div>
 
         {/* Amenities */}
-        <div className="flex justify-between items-center gap-12 text-gray-600 text-sm mb-4">
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 text-gray-600 text-sm mb-4">
           <div className="flex items-center gap-1">
             <Bed className="w-4 h-4" />
             <span>{property.bedrooms} Bedroom</span>
@@ -107,7 +107,7 @@ const PropertyCard = ({ property }) => {
           </div>
           <div className="flex items-center gap-1">
             <Shirt className="w-4 h-4" />
-            <span>{property.wardrobe} wardrobe</span>
+            <span>{property.wardrobe} Wardrobe</span>
           </div>
           <div className="flex items-center gap-1">
             <Tv className="w-4 h-4" />
@@ -126,10 +126,14 @@ const PropertyCard = ({ property }) => {
 };
 
 const PropertyListings = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const navigate = useNavigate();
   function handleClick() {
-    // navigate("/");
-    window.location.href = "/";
+    navigate("/property-detail");
+    // window.location.href = "/";
   }
   const properties = [
     {

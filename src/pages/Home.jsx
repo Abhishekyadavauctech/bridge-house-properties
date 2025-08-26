@@ -25,8 +25,8 @@ const Home = () => {
       {/* <ProjectSlider /> */}
       <PropertySlider />
       <RentalListingApp />
-      <PropertyDetailPage />
-      <PropertyListings />
+      {/* <PropertyDetailPage /> */}
+      {/* <PropertyListings /> */}
     </>
   );
 };

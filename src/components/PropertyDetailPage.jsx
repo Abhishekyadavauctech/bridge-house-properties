@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -31,6 +31,10 @@ import {
 } from "lucide-react";
 
 export default function PropertyDetailPage() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const [showDescription, setShowDescription] = useState(true);
   const [showFeatures, setShowFeatures] = useState(true);
   const [showAbout, setShowAbout] = useState(true);
@@ -46,7 +50,7 @@ export default function PropertyDetailPage() {
 
   const images = [
     "https://i.pinimg.com/1200x/8e/cf/f7/8ecff71ffd6b62d82084f18cbe08f205.jpg",
-    "https://i.pinimg.com/1200x/2b/76/cc/2b76cc89c6c9553288e83f48495a5357.jpg",  
+    "https://i.pinimg.com/1200x/2b/76/cc/2b76cc89c6c9553288e83f48495a5357.jpg",
     "https://i.pinimg.com/1200x/4e/aa/83/4eaa8389a96a657e7f08c7ca52fc8e36.jpg",
     "https://i.pinimg.com/1200x/4e/aa/83/4eaa8389a96a657e7f08c7ca52fc8e36.jpg",
     "https://i.pinimg.com/1200x/e2/87/22/e28722ecaf7884ece3f2d56d025f17ad.jpg",
@@ -102,53 +106,61 @@ export default function PropertyDetailPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Header */}
-      {/* <div className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+      <div
+        className="relative bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://dreamsestate.dreamstechnologies.com/html/assets/img/bg/breadcrumb-bg.jpg')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/20 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-6 py-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+            {/* Left Content */}
             <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                  <TrendingUp className="w-4 h-4" />
-                  Trending
-                </span>
-                <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                  <Sparkles className="w-4 h-4" />
-                  Fresh List
-                </span>
-              </div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Luxury Hilltop Villa with Valley Views
+              <h1 className="text-xl lg:text-3xl font-bold text-white tracking-tight drop-shadow-lg mb-3">
+                Luxury Hilltop Villa <br className="hidden md:block" /> with
+                Valley Views
               </h1>
-              <div className="flex items-center gap-2 text-gray-600">
-                <MapPin className="w-5 h-5" />
-                <span>Mohawk River Valley, Upstate NY</span>
+              <div className="flex items-center gap-2 text-gray-200 font-light">
+                <MapPin className="w-5 h-5 text-blue-400" />
+                <span className="text-base">
+                  Mohawk River Valley, Upstate NY
+                </span>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+
+            {/* Right Content */}
+            <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="text-3xl font-bold text-blue-600">$850,000</div>
-                <div className="text-sm text-gray-500">
-                  Total No of Visits: 45
+                <div className="text-2xl font-extrabold text-yellow-400 drop-shadow-md">
+                  ₹850,000
                 </div>
+                <div className="text-sm text-gray-300">Total Visits: 45</div>
               </div>
+
               <button
                 onClick={() => setIsFavorite(!isFavorite)}
-                className={`p-3 rounded-full transition-all ${
+                className={`p-2 rounded-full shadow-lg transition-all ${
                   isFavorite
-                    ? "bg-red-100 text-red-500"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-red-500 text-white scale-110"
+                    : "bg-white/90 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 <Heart
-                  className={`w-6 h-6 ${isFavorite ? "fill-current" : ""}`}
+                  className={`w-6 h-6 ${
+                    isFavorite ? "fill-current" : ""
+                  } transition-transform`}
                 />
               </button>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      <div className="max-w-7xl mx-auto p-4">
+      <div className="max-w-7xl mx-auto py-12 p-4">
         <div className="flex items-center gap-3 mb-2">
           <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm  flex items-center gap-1">
             <TrendingUp className="w-4 h-4" />
@@ -488,7 +500,7 @@ export default function PropertyDetailPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-500 mb-2">
-                    Total Amount ($)
+                    Total Amount (₹)
                   </label>
                   <input
                     type="number"
@@ -500,7 +512,7 @@ export default function PropertyDetailPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Down Payment ($)
+                    Down Payment (₹)
                   </label>
                   <input
                     type="number"

@@ -6,6 +6,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
+import PropertyDetailPage from "./components/PropertyDetailPage";
+import PropertyListings from "./components/PropertyListings";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+         <Route path="/property-detail" element={<PropertyDetailPage />} />
+         <Route path="/property-list" element={<PropertyListings />} />
       </Routes>
     <Footer/>
     </Router>

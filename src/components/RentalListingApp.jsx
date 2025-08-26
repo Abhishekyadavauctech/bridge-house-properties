@@ -17,8 +17,8 @@ export default function RentalListingApp() {
 
    const navigate = useNavigate();
   function handleClick() {
-    // navigate("/");
-      window.location.href = "/";
+    navigate("/property-detail");
+
   }
 
   const [filters, setFilters] = useState({
@@ -201,13 +201,13 @@ export default function RentalListingApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <div className="max-w-7xl mx-auto py-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-0 py-4 md:py-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <div className="inline-flex items-center justify-center mb-4">
             <div className="h-1 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
           </div>
-          <h1 className="text-4xl lg:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-4">
+          <h1 className="text-xl lg:text-3xl  font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-4">
             Premium Property Collection
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -218,7 +218,7 @@ export default function RentalListingApp() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Enhanced Sidebar Filter */}
-          <div className="lg:w-80 flex-shrink-0">
+          <div className=" lg:w-80 flex-shrink-0">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden sticky top-8">
               <div className="bg- px-6 py-4">
                 <div className="flex items-center gap-3 text-grey-800">
@@ -508,8 +508,8 @@ export default function RentalListingApp() {
             </div>
 
             {/* Enhanced View All Button */}
-            <div className="text-center mt-12">
-              <button className="bg-teal-500 text-white px-10 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <div className="text-center mt-8 md:mt-12">
+              <button className="bg-teal-500 text-white px-4 py-2 md:px-10 md:py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 View All
               </button>
             </div>
