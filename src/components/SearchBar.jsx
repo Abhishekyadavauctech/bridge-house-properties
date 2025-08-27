@@ -49,16 +49,16 @@ const SearchBar = () => {
   };
 
   return (
-    <div className=" flex  items-center justify-start" >
+    <div className=" flex flex-wrap items-center justify-start" >
       <div className="bg-white rounded-full shadow-xl flex items-center md:max-w-2xl w-full  transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
         
         {/* Location Selector */}
         <div 
           ref={dropdownRef}
-          className="relative flex items-center px-5 border-r border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+          className="relative flex items-center px-2 md:px-5 border-r border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          <span className="font-semibold text-gray-700 mr-2 whitespace-nowrap">
+          <span className="md:font-semibold text-sm text-gray-700 mr-2 whitespace-nowrap">
             {selectedLocation}
           </span>
           <svg 
@@ -101,13 +101,13 @@ const SearchBar = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Search for locality, landmark, project, or builder"
-          className="flex-1 px-5 py-5 text-base text-gray-700 placeholder-gray-400 border-none outline-none"
+          className="flex-1 md:px-5 md:py-5 py-2 md:text-base text-sm text-gray-700  placeholder-gray-400 border-none "
         />
 
         {/* Search Button */}
         <button
           onClick={handleSearch}
-          className="px-8 py-5  bg-teal-500 text-white font-semibold text-base cursor-pointer rounded-r-full transition-all duration-200 flex items-center gap-2 hover:scale-105 active:scale-95"
+          className="md:px-8 md:py-5 py-2 px-2  bg-teal-500 text-white font-semibold md:text-base  text-sm cursor-pointer rounded-r-full transition-all duration-200 flex items-center gap-2 hover:scale-105 active:scale-95"
           // style={{ 
           //   background: 'linear-gradient(135deg, #19c088ff 0%, #059669 100%)',
           // }}
@@ -118,7 +118,7 @@ const SearchBar = () => {
             e.target.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
           }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <svg className='hidden md:block' width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path 
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
               stroke="currentColor" 
