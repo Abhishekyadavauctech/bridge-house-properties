@@ -57,7 +57,7 @@ const PropertySlider = () => {
 
   return (
     <div className="w-full bg-gray-100 py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto px-4">
         {/* Section Header */}
         <div className="flex justify-center mb-3">
           <span className="h-1 w-12 bg-gradient-to-r from-purple-500 to-green-400 rounded-full"></span>

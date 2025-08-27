@@ -80,11 +80,11 @@ const SearchBar = () => {
           
           {/* Dropdown Menu */}
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white rounded-xl shadow-lg z-10 mt-2 py-2">
+            <div className="absolute top-full left-0 right-0 bg-white h-15 md:w-35 md:h-35 overflow-x-auto rounded-xl shadow-lg z-10 mt-2 py-2">
               {cities.map((city) => (
                 <div
                   key={city}
-                  className="px-5 py-3 cursor-pointer hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                  className="md:px-5 px-2 md:py-3 text-sm cursor-pointer hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
                   onClick={() => handleLocationSelect(city)}
                 >
                   {city}
@@ -101,7 +101,7 @@ const SearchBar = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Search for locality, landmark, project, or builder"
-          className="flex-1 md:px-5 md:py-5 py-2 md:text-base text-sm text-gray-700  placeholder-gray-400 border-none "
+          className="flex-1 md:px-5 md:py-5 py-2 md:text-base text-sm text-gray-700  placeholder-gray-400 border-none  "
         />
 
         {/* Search Button */}
