@@ -75,7 +75,7 @@ export default function FeaturedPropertyType() {
       </div>
 
       {/* Property Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full lg:w-[80%] xl:w-[75%] 2xl:w-[70%] mx-auto">
         {propertyTypes.map((property, index) => {
           const IconComponent = property.icon; // ✅ move inside map
           return (
