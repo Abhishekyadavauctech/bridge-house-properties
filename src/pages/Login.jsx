@@ -27,7 +27,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
@@ -36,9 +36,9 @@ export default function Login() {
 
       <div className="relative w-full max-w-4xl grid lg:grid-cols-2 gap-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Left Side - Branding */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
+        <div className=" bg-[#005697] p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black opacity-10"></div>
-          <div className="relative z-10">
+          <div className="hidden md:block relative z-10">
             <div className="flex items-center justify-center mb-8 ">
               {/* <div className="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                 <Home className="w-6 h-6 text-white" />
@@ -79,7 +79,7 @@ export default function Login() {
         </div>
 
         {/* Right Side - Form */}
-        <div className="p-8 lg:p-12">
+        <div className="p-8 lg:p-12 flex items-center">
           <div className="max-w-sm mx-auto">
             {/* Toggle Buttons */}
             <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
@@ -237,13 +237,13 @@ export default function Login() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full bg-[#005697] text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 {isLogin ? "Sign In" : "Create Account"}
               </button>
 
               {/* Divider */}
-              <div className="relative my-8">
+              {/* <div className="relative my-8">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
@@ -252,10 +252,10 @@ export default function Login() {
                     or continue with
                   </span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Social Login */}
-              <div className="grid grid-cols-2 gap-4">
+              {/* <div className="grid grid-cols-2 gap-4">
                 <button
                   type="button"
                   className="flex items-center justify-center px-4 py-3 border border-gray-200 rounded-xl hover:border-gray-300 transition-all duration-300 hover:bg-gray-50"
@@ -297,7 +297,7 @@ export default function Login() {
                     Facebook
                   </span>
                 </button>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
