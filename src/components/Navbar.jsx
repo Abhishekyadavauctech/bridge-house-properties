@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/bridge-house.png";
 
 const Navbar = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState({});
 
@@ -35,11 +35,12 @@ const Navbar = () => {
         <div className="sm:w-full lg:w-[80%]  xl:w-[80%] 2xl:w-[70%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div onClick={() => navigate("/")} className="w-30 h-30  rounded-lg flex items-center justify-center cursor-pointer">
-               
-                <img  src={logo} alt="" />
+              <div
+                onClick={() => navigate("/")}
+                className="w-30 h-30  rounded-lg flex items-center justify-center cursor-pointer"
+              >
+                <img src={logo} alt="" />
               </div>
-             
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -79,9 +80,10 @@ const Navbar = () => {
               </a> */}
             </div>
             <div className="hidden md:flex">
-               <a href="/login"><button className="bg-[#004f8a] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
-                Login / SignUp
-              </button>
+              <a href="/login">
+                <button className="bg-[#004f8a] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
+                  Login / SignUp
+                </button>
               </a>
             </div>
 
@@ -107,31 +109,33 @@ const Navbar = () => {
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600"
               >
                 Home
-              </Link> 
-               <Link
+              </Link>
+              <Link
                 to="/"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600"
               >
                 Services
               </Link>
-             {/* <Link
+              {/* <Link
                 to="#doctors"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600"
               >
                 Doctors
               </Link> */}
-             
-                <Link
+
+              <Link
                 to="/"
                 className="block px-3 py-2 text-gray-700 hover:text-blue-600"
               >
                 About
-              </Link> 
-              
-              
-             <a href="#contact"> <button className="w-full mt-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full">
-                Contact Us
-              </button></a>
+              </Link>
+
+              <a href="#contact">
+                {" "}
+                <button className="w-full mt-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full">
+                  Contact Us
+                </button>
+              </a>
             </div>
           </div>
         )}
