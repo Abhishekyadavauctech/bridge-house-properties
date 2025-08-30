@@ -56,7 +56,7 @@ export default function Login() {
               Find Your Dream Home Today
             </h2>
 
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+            <p className="2xl:text-lg text-base  text-blue-100 mb-8 leading-relaxed">
               Join thousands of satisfied customers who found their perfect
               property through our premium real estate platform.
             </p>
@@ -136,8 +136,7 @@ export default function Login() {
                 </div>
               )}
 
-              {/* Phone Field (Sign Up Only) */}
-              {!isLogin && (
+              {/* Phone Field (Sign Up Only) */}      
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <input
@@ -150,9 +149,10 @@ export default function Login() {
                     required={!isLogin}
                   />
                 </div>
-              )}
+            
 
               {/* Email Field */}
+               {!isLogin && (
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
@@ -165,6 +165,7 @@ export default function Login() {
                   required
                 />
               </div>
+              )}
 
               {/* Password Field */}
               <div className="relative">
