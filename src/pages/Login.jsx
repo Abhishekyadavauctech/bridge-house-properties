@@ -27,12 +27,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-100 rounded-full opacity-20 animate-pulse"></div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    
 
       <div className="relative w-full max-w-4xl grid lg:grid-cols-2 gap-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Left Side - Branding */}
