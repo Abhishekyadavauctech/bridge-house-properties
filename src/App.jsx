@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import PropertyDetailPage from "./components/PropertyDetailPage";
 import PropertyListings from "./components/PropertyListings";
 import Login from "./pages/Login";
+import AboutUs from "./pages/AboutUs";
+import RealEstateGallery from "./components/RealEstateGallery";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/gallery" element={<RealEstateGallery />} />
+         <Route path="/contact" element={<Contact />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
          <Route path="/property-detail" element={<PropertyDetailPage />} />

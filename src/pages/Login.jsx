@@ -28,8 +28,6 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-    
-
       <div className="relative w-full max-w-4xl grid lg:grid-cols-2 gap-8 bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Left Side - Branding */}
         <div className=" bg-[#005697] p-8 lg:p-12 flex flex-col justify-center text-white relative overflow-hidden">
