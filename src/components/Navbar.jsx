@@ -79,7 +79,7 @@ const Navbar = () => {
               </a> */}
             </div>
             <div className="hidden md:flex">
-               <a href="/"><button className="bg-[#004f8a] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
+               <a href="/login"><button className="bg-[#004f8a] text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
                 Login / SignUp
               </button>
               </a>
