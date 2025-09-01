@@ -130,35 +130,90 @@ export default function Login() {
                 </div>
               )}
 
-              {/* Phone Field (Sign Up Only) */}      
-                <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-300 hover:border-gray-300"
-                    required={!isLogin}
-                  />
-                </div>
-            
-
-              {/* Email Field */}
-               {!isLogin && (
+              {/* Phone Field (Sign Up Only) */}
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-300 hover:border-gray-300"
-                  required
+                  required={!isLogin}
                 />
               </div>
+
+              {/* Email Field */}
+              {!isLogin && (
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-300 hover:border-gray-300"
+                    required
+                  />
+                </div>
+              )}
+
+              {!isLogin && (
+                <div className="flex gap-6">
+                  {/* Buyer Checkbox */}
+                  <label className="relative flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="asBuyer"
+                      checked={formData.asBuyer}
+                      onChange={handleInputChange}
+                      className="peer hidden"
+                    />
+                    <div className="w-5 h-5 border border-gray-300 rounded-md flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-3 h-3 text-white hidden peer-checked:block"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="ml-3 text-gray-700"> Buyer</span>
+                  </label>
+
+                  {/* Seller Checkbox */}
+                  <label className="relative flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="asSeller"
+                      checked={formData.asSeller}
+                      onChange={handleInputChange}
+                      className="peer hidden"
+                    />
+                    <div className="w-5 h-5 border border-gray-300 rounded-md flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-3 h-3 text-white hidden peer-checked:block"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="ml-3 text-gray-700"> Seller</span>
+                  </label>
+                </div>
               )}
 
               {/* Password Field */}
